@@ -1,0 +1,428 @@
+.custom-slider-2 {
+  height: 80vh;
+}
+
+.custom-slider-2 .awssld__bullets {
+  bottom: 10px;
+  z-index: 10;
+}
+
+.bg1, .bg2 {
+  height: 100%;
+  object-fit: cover;
+}
+
+.custom-slider-2 .awssld__content {
+  background-color: white;
+}
+
+.s-content {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  color: lightcoral;
+}
+
+.s-content2 {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  color: white;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  
+}
+
+.hello {
+  font-size: 4vw;
+  animation: slideIn 2s ease-out forwards;
+}
+
+.hello-right {
+  animation: slideInFromRight 2s ease-out forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+  .s-content, .s-content2 {
+    left: 5%;
+    text-align: center;
+  }
+  .hello {
+    font-size: 36px;
+    margin: 0;
+  }
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+  .s-content, .s-content2 {
+    left: 5%;
+  }
+  .hello {
+    font-size: 48px;
+  }
+}
+
+/* Small Laptops */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .s-content, .s-content2 {
+    left: 10%;
+  }
+  .hello {
+    font-size: 54px;
+  }
+}
+
+/* Desktops */
+@media (min-width: 1025px) {
+  .hello {
+    font-size: 72px;
+  }
+}
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Abel&family=Open+Sans:wght@300&display=swap');
+
+:root {
+  --colorTheme: #f0f0f0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.imghome {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+sup {
+  font-size: 0.6em;
+}
+
+.pghome {
+  font-weight: 300;
+  color: #111 !important;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.gridhome {
+  background: var(--colorTheme);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  display: grid;
+  grid-gap: 2em;
+  min-height: 100vh;
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+.gridhome span {
+  display: block;
+}
+
+.cover img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.title .text-bold {
+  font-family: 'Abel', sans-serif;
+}
+
+.title--primary,
+.title--secondary,
+.info {
+  z-index: 2;
+}
+
+.title--secondary {
+  text-align: right;
+}
+
+.title--secondary .text-bold {
+  font-size: max(6vw, 40px);
+}
+
+.title--primary .text-bold {
+  font-size: max(10vw, 60px);
+}
+
+.info {
+  grid-column: 1/2;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.info li {
+  margin-top: 1.5em;
+}
+
+@media (min-width: 860px) {
+  .gridhome {
+    grid-template-rows: minmax(1em, auto) max-content 1fr 3em minmax(1em, auto);
+    grid-template-columns: 4fr repeat(4, 1fr) 4fr;
+    grid-gap: 0 10px;
+    height: 100vh;
+    min-height: 600px;
+  }
+
+  .title--secondary {
+    grid-row: 2/3;
+    grid-column: 1 / 3;
+  }
+
+
+
+  .title--primary {
+    grid-row: 4/6;
+    grid-column: 5/7;
+  }
+
+  .cover {
+    grid-row: 2/5;
+    grid-column: 2 / span 4;
+  }
+
+  .info {
+    grid-row: 3/5;
+    grid-column: 1/2;
+    align-self: flex-end;
+  }
+}
+
+
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,500;1,400&family=DM+Serif+Display&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.body {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  max-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-image: url('/public/img/shopbg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.menu {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+
+.hero {
+  grid-column: 6 / span 5;
+  grid-row: 1 / -1;
+  background: url('/public/img/homepg1.jpg') no-repeat center center / cover;
+}
+
+.small1, .small2, .small3 {
+  background-size: cover;
+  background-position: center;
+}
+
+.small1 {
+  grid-column: 1 / 3;
+  grid-row: 10 / 13;
+  background: url("/public/img/outdoorplant3.jpg") no-repeat center center / cover;
+}
+
+.small2 {
+  grid-column: 4 / 6;
+  grid-row: 1 / 4;
+  background: url("/public/img/outdoorplant2.jpg") no-repeat center center / cover;
+}
+
+.small3 {
+  grid-column: 11 / 13;
+  grid-row: 10 / 13;
+  background: url("/public/img/flower.jpg") no-repeat center center / cover;
+}
+
+.content {
+  margin-top: 2rem;
+  grid-column: 3 / 6;
+  grid-row: 4 / 6;
+  color: #fff;
+  text-align: right;
+  margin-right: 1rem;
+  font-weight: 400;
+}
+
+.content p {
+  margin-top: 0.6rem;
+}
+
+.header {
+  grid-column: 4 / 10;
+  grid-row: 8 / 10;
+  font-family: 'DM Serif Display', serif;
+  font-size: 6rem;
+}
+
+.readmore {
+  grid-column: 12 / 13;
+  grid-row: -9 / -6;
+}
+
+.readmore img {
+  height: 8.75rem;
+  width: auto;
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1.875rem;
+  position: absolute;
+  grid-column: 1 / 2;
+  grid-row: 3 / 9;
+}
+
+.social img {
+  display: block;
+  margin-top: 2rem;
+}
+
+@media (max-width: 1047px) {
+  .header {
+    font-size: 4rem;
+    width: min-content;
+  }
+
+  .content p {
+    font-size: 0.8rem;
+  }
+
+  .social img {
+    height: 80px;
+    width: auto;
+  }
+
+  .social img:last-child {
+    height: 60px;
+  }
+}
+@media (max-width: 2000px) {
+  .header {
+    font-size: 4rem;
+    width: min-content;
+  }
+
+  .content p {
+    font-size: 0.8rem;
+  }
+
+  .social img {
+    height: 80px;
+    width: auto;
+  }
+
+  .social img:last-child {
+    height: 60px;
+  }
+}
+
+@media (max-width: 930px) {
+  .small1, .small3 {
+    grid-row: 11 / 13;
+  }
+
+  .small2 {
+    grid-row: 1 / 3;
+  }
+
+  .header {
+    grid-column: 4 / 12;
+  }
+
+  .menu {
+    transform: scale(0.9);
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    font-size: 3rem;
+  }
+
+  .content p {
+    font-size: 0.7rem;
+    margin-top: -156px;
+  }
+
+  .social img {
+    height: 60px;
+  }
+
+  .small1, .small2, .small3 {
+    display: none; /* Hide small images on smaller screens */
+  }
+}
+
+
+
+
+
