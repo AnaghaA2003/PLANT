@@ -148,7 +148,7 @@ export default function OutdoorHome() {
             
           ))} */}
           <Toaster />
-          {role !== 'admin' ? product.filter((data) => { return data.status == 'Approved' }).map((value, index) => (
+          {role !=='admin' ?  product.filter((data)=>{return data.status=='Approved'}). map((value, index) => (
             role === 'user' ? (
               <div>
                 <div className='image-card'>
@@ -166,7 +166,7 @@ export default function OutdoorHome() {
                         {wishlist.filter((data) => {
                           return data.product_Id === value._id
 
-                        })[0] ? <i className="fa-solid fa-heart" style={{ color: "#ff0000" }} onClick={() => {
+                        })[0] ? <i className="fa-solid fa-heart"  style={{ color: "#ff0000" }} onClick={() => {
                           WishListProduct(value._id)
                         }} /> : <i className="fa-regular fa-heart" onClick={() => {
                           WishListProduct(value._id)
@@ -197,7 +197,7 @@ export default function OutdoorHome() {
                 </div>
 
               </div>
-
+           
             ) : role === 'shop' ? (
               <div>
                 <div className='image-card'>
@@ -237,55 +237,55 @@ export default function OutdoorHome() {
             ) : null
 
 
-          )) :
+          )):
+          product.map((data)=>(
+<div>
+              <div className='image-card'>
 
-            product.map((value, index) => (
-              <div>
-                <div className='image-card'>
+                <div className=" shop-card">
+                  <img src={data.product_img}></img>
+                  <div className="card__content">
+                    <p className="card__title">{data.productName}</p>
 
-                  <div className=" shop-card">
-                    <img src={value.product_img}></img>
-                    <div className="card__content">
-                      <p className="card__title">{value.productName}</p>
-
-                      <p className="card__description">
-                        {value.description}
-                      </p><br></br>
-                      <div className='icon'>
-                        <i className="fa-regular fa-heart" />
-                        <i class="fa-solid fa-cart-shopping"></i>
-
-                      </div>
-
-                      <p style={{ color: "rgb(122, 35, 35)", textAlign: "center", display: "flex", justifyContent: "space-evenly" }}>
-                        <div><i class="fa-solid fa-indian-rupee-sign"></i>{value.price}</div>
-                        <div> {value.quantity}</div>
-                      </p>
-                      <br></br><br></br><br></br>
-                      {value.status == 'Approved' ?
-                        <button type="submit" className="btn bttn-success" onClick={() => {
-                          productDelete(value._id)
-                        }}><b>Delete</b></button>
-                        :
-                        <div style={{ display: "grid", justifyContent: "space-evenly", borderRadius: "15px", gap: "10px" }}>
-                          <button type="button" className="btn bttn-success" onClick={() => {
-                            productApprove(value._id)
-                          }}><b>Approve</b>  </button>
-                          <button type="submit" className="btn bttn-success" onClick={() => {
-                            productDelete(value._id)
-                          }}><b>Delete</b></button>
-
-                        </div>
-                      }
+                    <p className="card__description">
+                      {data.description}
+                    </p><br></br>
+                    <div className='icon'>
+                      <i className="fa-regular fa-heart" />
+                      <i class="fa-solid fa-cart-shopping"></i>
 
                     </div>
+
+                    <p style={{ color: "rgb(122, 35, 35)", textAlign: "center", display: "flex", justifyContent: "space-evenly" }}>
+                      <div><i class="fa-solid fa-indian-rupee-sign"></i>{data.price}</div>
+                      <div> {data.quantity}</div>
+                    </p>
+                    <br></br><br></br><br></br>
+                    {data.status == 'Approved' ?
+                      <button type="submit" className="btn bttn-success" onClick={() => {
+                        productDelete(data._id)
+                      }}><b>Delete</b></button>
+                      :
+                      <div style={{ display: "grid", justifyContent: "space-evenly", borderRadius: "15px", gap: "10px" }}>
+                        <button type="button" className="btn bttn-success" onClick={() => {
+                          productApprove(data._id)
+                        }}><b>Approve</b>  </button>
+                        <button type="submit" className="btn bttn-success" onClick={() => {
+                          productDelete(data._id)
+                        }}><b>Delete</b></button>
+
+                      </div>
+                    }
+
                   </div>
                 </div>
-
               </div>
-            )
 
-            )
+            </div>
+          ))
+         
+            
+          
           }
         </div>
       </div>
