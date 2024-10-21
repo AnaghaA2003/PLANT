@@ -388,6 +388,7 @@ sup {
   .header {
     font-size: 4rem;
     width: min-content;
+
   }
 
   .content p {
@@ -427,6 +428,8 @@ sup {
 @media (max-width: 768px) {
   .header {
     font-size: 3rem;
+    color: black;
+    text-shadow: 0 0 10px white;
   }
 
   .content p {
