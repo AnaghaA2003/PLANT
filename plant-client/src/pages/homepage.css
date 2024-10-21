@@ -367,7 +367,7 @@ sup {
     font-size: 4rem;
     width: min-content;
     color: black;
-    /* text-shadow: 0 0 10px rgb(141, 231, 81); */
+    text-shadow: 0 0 10px white;
   }
 
   .content p {
