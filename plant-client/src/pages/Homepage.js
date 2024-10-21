@@ -74,16 +74,16 @@ export default function Home() {
       {/* //indoor// */}
 
 
-      <h1 style={{ textAlign: "center", color: "black" }} className='pghome'>
+      <h1 style={{ textAlign: "center", color: "black" }} className='pghome'ref={scrollTargetRef}>
         <b>Why we should be greening <br />our home with <sup>indoor</sup> plants</b>
       </h1>
-      <p style={{ textAlign: "center", fontSize: "16px" }} className='t pghome'>
+      <p style={{ textAlign: "center", fontSize: "16px" ,margin:"10px"}} className='t pghome'>
         Improved Air Quality | Enhanced Mental Health | Aesthetic Appeal | Connection to Nature | Health Benefits
       </p>
       <br />
 
 
-      <main className="gridhome" ref={scrollTargetRef} >
+      <main className="gridhome"  >
         <div className="title title--primary">
           <span className="pghome">A little green companion to brighten my day</span>
           <span className="text-bold">Plant</span>
@@ -167,7 +167,7 @@ export default function Home() {
       <h1 style={{ textAlign: "center", color: "black" }} className='col-head pghome'>
         <b>Why we should be greening <br />our home with <sup>Outdoor</sup> plants</b>
       </h1>
-      <p style={{ textAlign: "center", fontSize: "16px" }} >
+      <p style={{ textAlign: "center", fontSize: "16px",margin:"10px" }} >
         Improved Air Quality | Supports Local Wildlife | Aesthetic Appeal | Environmental Benefits | Physical Health Benefits
       </p>
       <br />

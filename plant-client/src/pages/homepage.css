@@ -366,6 +366,8 @@ sup {
   .header {
     font-size: 4rem;
     width: min-content;
+    color: black;
+    text-shadow: 0 0 10px rgb(141, 231, 81);
   }
 
   .content p {
@@ -501,6 +503,13 @@ sup {
     font-weight: bold;
     padding: 7px;
   }
+  .bgnav {
+    background-image: url('/public/img/add2.jpg');
+    background-size: cover;
+    height: 80vh;
+    box-shadow: 0 0 10px cyan;
+    border-radius: 8px;
+  }
 
 }
 
@@ -508,6 +517,6 @@ sup {
   text-align: center;
   font-size: 2rem;
   display: block;
-  
+
 
 }
