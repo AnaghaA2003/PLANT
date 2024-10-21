@@ -9,6 +9,8 @@ import axios from 'axios';
 
 export default function MyOrderProducts() {
   const[MyOrder,setMyOrder]=useState([])
+  console.log("MyOrder==>",MyOrder);
+  
   useEffect(()=>{
     const logid=JSON.parse(localStorage.getItem('loginId'))
     axios.get(`http://localhost:5000/api/order/myorder/${logid}`).then((res)=>{

@@ -7,7 +7,8 @@
   z-index: 10;
 }
 
-.bg1, .bg2 {
+.bg1,
+.bg2 {
   height: 100%;
   object-fit: cover;
 }
@@ -29,7 +30,7 @@
   left: 10%;
   color: white;
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  
+
 }
 
 .hello {
@@ -46,6 +47,7 @@
     transform: translateX(-100%);
     opacity: 0;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;
@@ -57,6 +59,7 @@
     transform: translateX(100%);
     opacity: 0;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;
@@ -65,10 +68,13 @@
 
 /* Mobile Devices */
 @media (max-width: 480px) {
-  .s-content, .s-content2 {
+
+  .s-content,
+  .s-content2 {
     left: 5%;
     text-align: center;
   }
+
   .hello {
     font-size: 36px;
     margin: 0;
@@ -77,9 +83,12 @@
 
 /* Tablets */
 @media (min-width: 481px) and (max-width: 768px) {
-  .s-content, .s-content2 {
+
+  .s-content,
+  .s-content2 {
     left: 5%;
   }
+
   .hello {
     font-size: 48px;
   }
@@ -87,9 +96,12 @@
 
 /* Small Laptops */
 @media (min-width: 769px) and (max-width: 1024px) {
-  .s-content, .s-content2 {
+
+  .s-content,
+  .s-content2 {
     left: 10%;
   }
+
   .hello {
     font-size: 54px;
   }
@@ -107,7 +119,6 @@
 
 
 
-  
 
 
 
@@ -117,7 +128,8 @@
 
 
 
-  @import url('https://fonts.googleapis.com/css2?family=Abel&family=Open+Sans:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Open+Sans:wght@300&display=swap');
 
 :root {
   --colorTheme: #f0f0f0;
@@ -278,7 +290,9 @@ sup {
   background: url('/public/img/homepg1.jpg') no-repeat center center / cover;
 }
 
-.small1, .small2, .small3 {
+.small1,
+.small2,
+.small3 {
   background-size: cover;
   background-position: center;
 }
@@ -286,7 +300,7 @@ sup {
 .small1 {
   grid-column: 1 / 3;
   grid-row: 10 / 13;
-  background: url("/public/img/outdoorplant3.jpg") no-repeat center center / cover;
+  /* background: url("/public/img/outdoorplant3.jpg") no-repeat center center / cover; */
 }
 
 .small2 {
@@ -298,7 +312,7 @@ sup {
 .small3 {
   grid-column: 11 / 13;
   grid-row: 10 / 13;
-  background: url("/public/img/flower.jpg") no-repeat center center / cover;
+  /* background: url("/public/img/flower.jpg") no-repeat center center / cover; */
 }
 
 .content {
@@ -320,6 +334,8 @@ sup {
   grid-row: 8 / 10;
   font-family: 'DM Serif Display', serif;
   font-size: 6rem;
+  color: brown;
+  text-shadow: 0 0 10px cyan;
 }
 
 .readmore {
@@ -365,6 +381,7 @@ sup {
     height: 60px;
   }
 }
+
 @media (max-width: 2000px) {
   .header {
     font-size: 4rem;
@@ -386,7 +403,9 @@ sup {
 }
 
 @media (max-width: 930px) {
-  .small1, .small3 {
+
+  .small1,
+  .small3 {
     grid-row: 11 / 13;
   }
 
@@ -417,8 +436,11 @@ sup {
     height: 60px;
   }
 
-  .small1, .small2, .small3 {
-    display: none; /* Hide small images on smaller screens */
+  .small1,
+  .small2,
+  .small3 {
+    display: none;
+    /* Hide small images on smaller screens */
   }
 }
 
@@ -426,3 +448,66 @@ sup {
 
 
 
+.bgnav {
+  background-image: url('/public/img/add2.jpg');
+  background-size: cover;
+  height: 80vh;
+  box-shadow: 0 0 10px cyan;
+  border-radius: 100px;
+}
+
+.navhead {
+  text-align: center;
+  font-size: 6rem;
+  font-family: 'DM Serif Display', serif;
+  color: #f0f0f0;
+  text-shadow: 0 0 10px black;
+
+}
+.navhead2{
+  text-align: center;
+  font-family: emoji;
+  color: black;
+}
+.navp{
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  display: block;
+  color: brown;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+
+  .navhead {
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'DM Serif Display', serif;
+    color: #f0f0f0;
+    text-shadow: 0 0 10px black;
+    padding-top: 100px;
+  
+  }
+  .navhead2{
+    text-align: center;
+    font-family: emoji;
+    color: black;
+  }
+  .navp{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: block;
+    color: black;
+    font-weight: bold;
+    padding: 7px;
+  }
+
+}
+
+.iconhpg{
+  text-align: center;
+  font-size: 2rem;
+  display: block;
+  
+
+}
