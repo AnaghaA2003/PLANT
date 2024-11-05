@@ -43,6 +43,7 @@ adminRoutes.post('/adminUser-delete/:id',async(req,res)=>{
     
     const id=req.params.id
     const delData=await userSchema.deleteOne({loginId:id})
+    
     if(delData.deletedCount==1){
         const deleteLogin=await loginSchema.deleteOne({_id:id})
         if(deleteLogin.deletedCount==1){

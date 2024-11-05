@@ -62,7 +62,7 @@ export default function ShopLogin() {
     }
     if (!input.email.trim()) {
       errorMessage.email = 'Email is required'
-    }
+    }   
     else if (!emailRegex.test(input.email)) {
       errorMessage.email = "Invalid email Address"
     }

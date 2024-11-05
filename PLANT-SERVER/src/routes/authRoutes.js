@@ -174,7 +174,7 @@ authRoutes.post('/login-check', async (req, res) => {
 
                 const token=jwt.sign( //encode chyan vendi use chyna method
                     {
-                        userLoginId:oldData._id,
+                        loginId:oldData._id,
                         email:oldData.email,
                         role:oldData.role,
                         status:oldData.status

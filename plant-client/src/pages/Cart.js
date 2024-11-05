@@ -153,7 +153,7 @@ export default function Cart() {
                       </button></Col>
                   </Row>
 
-.
+
                 </Container>
 
 

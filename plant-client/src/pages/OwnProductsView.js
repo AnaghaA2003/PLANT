@@ -10,6 +10,8 @@ export default function OwnProductsView() {
   const [view , setView] =useState([])
   console.log("view==>",view);
   const [filterProduct, setFilterProduct] = useState([])
+  console.log("state==>",filterProduct);
+  
   const navigate=useNavigate()
 
 
@@ -26,7 +28,7 @@ export default function OwnProductsView() {
         Authorization: `Bearer ${token}`
       }
     }).then((res)=>{
-      console.log("data==>",res.data.data);
+      console.log("data==>",res);
       setView(res.data.data)
     }) .catch((error) => {
       console.error("Error fetching data:", error);

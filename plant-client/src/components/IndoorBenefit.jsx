@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './benefits.css';
 import { useNavigate } from 'react-router-dom';
+import AOS from 'aos'
 
 export default function IndoorBenefit() {
   const navigate = useNavigate()
@@ -12,6 +13,9 @@ export default function IndoorBenefit() {
       return navigate('/indoor')
     }
   }
+  useEffect(()=>{
+    AOS.init();
+  },[])
   return (
     <div>
             <h1 style={{ textAlign: "center", color: "black" }} className='pghome'>
@@ -40,7 +44,7 @@ export default function IndoorBenefit() {
       />
     </a>
   </div>
-  <ul className="info">
+  <ul className="info" >
     <li>
       <span className="text-bold">Adding a touch of green to my life.</span>
       <span className="t pghome" style={{color:"black"}}><b>Harmony in a pot.</b></span>

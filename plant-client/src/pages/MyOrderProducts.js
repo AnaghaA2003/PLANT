@@ -49,7 +49,8 @@ export default function MyOrderProducts() {
             <div >
               <Container>
                 <Row>
-                  <Col ><b><u>Product</u></b><br></br><br></br><img src={value.product_img} height={'150px'} ></img><b>Product Name:{value.productName}</b></Col>
+                  <Col ><b><u>Product</u></b><br></br><br></br><img src={value.product_img} height={'150px'} >
+                  </img><b>Product Name:{value.productName}</b></Col>
                   <Col><b><u>Price</u></b> <br></br><br></br>{value.price}</Col>
                   <Col><b><u>category</u></b> <br></br><br></br> {value.category}</Col>
                   {/* <Col><b>status</b> <br></br><br></br>3 of 3 sdfguhi </Col> */}

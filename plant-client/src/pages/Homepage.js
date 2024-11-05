@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Nav from '../components/Nav'
 
 import './homepage.css'
@@ -10,6 +10,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 // import { baseUrl } from "./config";
+import AOS from 'aos'
 
 
 export default function Home() {
@@ -36,6 +37,9 @@ export default function Home() {
       scrollTargetRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }
+  useEffect(() => {
+    AOS.init();
+  }, [])
   return (
     <div>
       <meta charSet="UTF-8" />
@@ -56,9 +60,9 @@ export default function Home() {
         <Nav />
 
         <div className='bgnav'>
-          <h1 className='navhead'>Let's Bloom<br></br> Together</h1><br />
-          <h5 className='navhead2'>ENJOY THE MAGIC OF YOUR GARDEN</h5><br />
-          <p className='navp'>"Whether indoors or outdoors, plants inspire us to grow in every environment,<br /> adapting to the light that nourishes us,<br /> and reminding us that growth is a process, not a destination."</p><br></br>
+          <h1 className='navhead'  data-aos="zoom-in">Let's Bloom<br></br> Together</h1><br />
+          <h5 className='navhead2' data-aos="fade-up-right">ENJOY THE MAGIC OF YOUR GARDEN</h5><br />
+          <p className='navp' data-aos="fade-up-left">"Whether indoors or outdoors, plants inspire us to grow in every environment,<br /> adapting to the light that nourishes us,<br /> and reminding us that growth is a process, not a destination."</p><br></br>
 
           <span className='iconhpg'>
             <i class="fa-solid fa-angles-down fa-fade" style={{ color: "green" }} onClick={down}></i>
@@ -74,10 +78,10 @@ export default function Home() {
       {/* //indoor// */}
 
 
-      <h1 style={{ textAlign: "center", color: "black" }} className='pghome'ref={scrollTargetRef}>
+      <h1 style={{ textAlign: "center", color: "black" }} className='pghome' ref={scrollTargetRef} data-aos="fade-up-right">
         <b>Why we should be greening <br />our home with <sup>indoor</sup> plants</b>
       </h1>
-      <p style={{ textAlign: "center", fontSize: "16px" ,margin:"10px"}} className='t pghome'>
+      <p style={{ textAlign: "center", fontSize: "16px", margin: "10px" }} className='t pghome'>
         Improved Air Quality | Enhanced Mental Health | Aesthetic Appeal | Connection to Nature | Health Benefits
       </p>
       <br />
@@ -100,7 +104,9 @@ export default function Home() {
             />
           </a>
         </div>
-        <ul className="info">
+        <ul className="info" data-aos="fade-right"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine">
           <li>
             <span className="text-bold">Adding a touch of green to my life.</span>
             <span className="t pghome" style={{ color: "black" }}><b>Harmony in a pot.</b></span>
@@ -130,17 +136,17 @@ export default function Home() {
           <span className="text-bold">Plant</span>
         </div>
       </main>
-      <div className="container text-center card">
-        <div className="row">
-          <div className="col-12 col-md-4 mb-4">
+      <div className="container text-center card" >
+        <div className="row" >
+          <div className="col-12 col-md-4 mb-4" data-aos="fade-down-left">
             <img src='/img/webp.jpg' alt="Indoor Plant 1" className='img-fluid col-img' />
           </div>
 
-          <div className="col-12 col-md-4 mb-4">
+          <div className="col-12 col-md-4 mb-4" data-aos="fade-up" >
             <img src='/img/h2.jpg' alt="Indoor Plant 2" className='img-fluid col-img' />
           </div>
 
-          <div className="col-12 col-md-4 mb-4">
+          <div className="col-12 col-md-4 mb-4" data-aos="fade-down-right">
             <img src='/img/h3.jpg' alt="Indoor Plant 3" className='img-fluid col-img' />
           </div>
         </div>
@@ -164,10 +170,10 @@ export default function Home() {
 
 
 
-      <h1 style={{ textAlign: "center", color: "black" }} className='col-head pghome'>
+      <h1 style={{ textAlign: "center", color: "black" }} className='col-head pghome' data-aos="fade-up-right">
         <b>Why we should be greening <br />our home with <sup>Outdoor</sup> plants</b>
       </h1>
-      <p style={{ textAlign: "center", fontSize: "16px",margin:"10px" }} >
+      <p style={{ textAlign: "center", fontSize: "16px", margin: "10px" }} >
         Improved Air Quality | Supports Local Wildlife | Aesthetic Appeal | Environmental Benefits | Physical Health Benefits
       </p>
       <br />
@@ -214,15 +220,15 @@ export default function Home() {
 
       <div className="container text-center card" >
         <div className="row">
-          <div className="col-12 col-md-4 mb-4">
+          <div className="col-12 col-md-4 mb-4" data-aos="fade-down-left">
             <img src='/img/outdoor home.jpg' alt="Outdoor Plant 1" className='img-fluid col-img' />
           </div>
 
-          <div className="col-12 col-md-4 mb-4">
+          <div className="col-12 col-md-4 mb-4"  data-aos="fade-up">
             <img src='/img/outdoor-3.jpg' alt="Outdoor Plant 2" className='img-fluid col-img' />
           </div>
 
-          <div className="col-12 col-md-4 mb-4">
+          <div className="col-12 col-md-4 mb-4" data-aos="fade-down-right">
             <img src='/img/outdoor home2.jpg' alt="Outdoor Plant 3" className='img-fluid col-img' />
           </div>
         </div>
