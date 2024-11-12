@@ -9,6 +9,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ShopMore from './ShopMore';
 import Footer from '../components/Footer';
+import AOS from 'aos';
 
 export default function Shop() {
 
@@ -52,7 +53,7 @@ export default function Shop() {
     }
 
     const shopEdit = (shop_Id) => {
-        
+
         navigate(`/ShopEdit/${shop_Id}`);
     }
 
@@ -74,11 +75,14 @@ export default function Shop() {
         console.log(shop_login_id);
         if (loginRole == null) {
             return navigate('/login')
-          } else {
-            return  navigate(`/shopMore/${shop_login_id}`)
-        
+        } else {
+            return navigate(`/shopMore/${shop_login_id}`)
+
+        }
     }
-}
+    useEffect(() => {
+        AOS.init()
+    }, [])
 
     return (
         <div>
@@ -105,7 +109,8 @@ export default function Shop() {
 
                 {shop.map((value, index) => (
                     role === 'user' ? (
-                        <div key={index} style={{ display: "grid" }} className='container text-center'>
+                        <div key={index} style={{ display: "grid" }} className='container text-center'data-aos="fade-up"
+                        data-aos-duration="3000">
                             <div className="card1" style={{ width: "740px" }}>
                                 <div className="border1" />
                                 <div className="content">
@@ -250,7 +255,7 @@ export default function Shop() {
 
                                         <Col >
                                             <div className='colShop' >
-                                                <img src={value.shop_img} height={"200px"} alt="Shop" className='shopImage'/>
+                                                <img src={value.shop_img} height={"200px"} alt="Shop" className='shopImage' />
                                             </div>
                                         </Col>
                                         <Col >
@@ -301,36 +306,36 @@ export default function Shop() {
                                 </Container>
                             </div>
                         </div>
-                    ) :    <div key={index} style={{ display: "grid" }} className='container text-center'>
-                    <div className="card1" style={{ width: "740px" }}>
-                        <div className="border1" />
-                        <div className="content">
-                            <div className="logo">
-                                <div className="logo1">
-                                    <span><b>{value.shopName}</b></span>
-                                </div>
-                                <span className="trail" />
-                            </div>
-                            <span className="logo-bottom-text "><b>{value.shopName}</b></span>
-                        </div>
-                        <span className="bottom-text"><b>{value.shopName}</b></span>
-                    </div>
-                    <div>
-                        <Container>
-                            <Row>
-                                <Col>
-                                    <div  >
-                                        <img src={value.shop_img} height={"200px"} alt="Shop" className='shopImage' />
+                    ) : <div key={index} style={{ display: "grid" }} className='container text-center'>
+                        <div className="card1" style={{ width: "740px" }}>
+                            <div className="border1" />
+                            <div className="content">
+                                <div className="logo">
+                                    <div className="logo1">
+                                        <span><b>{value.shopName}</b></span>
                                     </div>
-                                </Col>
-                                <Col>
-                                    <div>
-                                        <p><b>{value.shopName}</b></p>
-                                        <p>
-                                            <b>{value.Address}</b><br />
-                                            <b>{value.Mobile}</b><br />
-                                        </p><br />
-                                        {/* <div style={{ display: "flex", justifyContent: "space-evenly", borderRadius: "15px" }}>
+                                    <span className="trail" />
+                                </div>
+                                <span className="logo-bottom-text "><b>{value.shopName}</b></span>
+                            </div>
+                            <span className="bottom-text"><b>{value.shopName}</b></span>
+                        </div>
+                        <div>
+                            <Container>
+                                <Row>
+                                    <Col>
+                                        <div  >
+                                            <img src={value.shop_img} height={"200px"} alt="Shop" className='shopImage' />
+                                        </div>
+                                    </Col>
+                                    <Col>
+                                        <div>
+                                            <p><b>{value.shopName}</b></p>
+                                            <p>
+                                                <b>{value.Address}</b><br />
+                                                <b>{value.Mobile}</b><br />
+                                            </p><br />
+                                            {/* <div style={{ display: "flex", justifyContent: "space-evenly", borderRadius: "15px" }}>
 
                                             <button type="button" className="btn bttn-success" style={{ borderRadius: "15px", width: "160px" }} onClick={() => {
                                                 shopEdit(value.loginId._id);
@@ -339,34 +344,34 @@ export default function Shop() {
                                                 shopDelete(value._id);
                                             }}>Delete</button>
                                         </div> */}
-                                    </div>
+                                        </div>
 
-                                </Col>
-                            </Row>
-                            <>
-                                <div
-                                    tabIndex={0}
-                                    className="plusButton"
-                                    onClick={() => shopMore(value.loginId._id)}
-                                >
-                                    <svg
-                                        className="plusIcon"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 30 30"
+                                    </Col>
+                                </Row>
+                                <>
+                                    <div
+                                        tabIndex={0}
+                                        className="plusButton"
+                                        onClick={() => shopMore(value.loginId._id)}
                                     >
-                                        <g>
-                                            <path d="M13.75 23.75V16.25H6.25V13.75H13.75V6.25H16.25V13.75H23.75V16.25H16.25V23.75H13.75Z" />
-                                        </g>
-                                    </svg>
-                                </div>
-                            </>
-                        </Container>
+                                        <svg
+                                            className="plusIcon"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 30 30"
+                                        >
+                                            <g>
+                                                <path d="M13.75 23.75V16.25H6.25V13.75H13.75V6.25H16.25V13.75H23.75V16.25H16.25V23.75H13.75Z" />
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </>
+                            </Container>
+                        </div>
                     </div>
-                </div>
                 ))}
             </div>
             <br></br>
-            <Footer/>
+            <Footer />
         </div>
     )
 }

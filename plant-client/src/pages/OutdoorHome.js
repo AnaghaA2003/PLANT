@@ -7,6 +7,7 @@ import toast, { Toaster } from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 import CareTips from '../components/CareTips'
 import Footer from '../components/Footer'
+import AOS from 'aos'
 
 
 export default function OutdoorHome() {
@@ -109,6 +110,9 @@ export default function OutdoorHome() {
 
     })
   }
+  useEffect(()=>{
+    AOS.init()
+  },[])
 
   return (
     <div>
@@ -129,10 +133,10 @@ export default function OutdoorHome() {
       {/* {input.map((value,index)=>(
         <AddProduct data={value}/>
       ))} */}
-      <div className='outdoor'>
+      <div className='outdoor' >
         {/* <img src='/img/bg-5.jpg' className='bg'></img> */}
-        <h1 className='Head'><b>OUTDOOR PLANTS</b></h1>
-        <div className='paragraph'><p>"The earth laughs in flowers."</p>
+        <h1 className='Head' data-aos="zoom-in"><b>OUTDOOR PLANTS</b></h1>
+        <div className='paragraph' data-aos="zoom-in-down"><p>"The earth laughs in flowers."</p>
         </div>
       </div><br></br>
       <div>

@@ -6,6 +6,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import toast, { Toaster } from 'react-hot-toast'
 import Footer from '../components/Footer'
+import AOS from 'aos'
 
 export default function IndoorHome() {
   const [checkwishlist, setCheckWishlist] = useState(false)
@@ -104,6 +105,10 @@ export default function IndoorHome() {
 
     })
   }
+
+  useEffect(() => {
+    AOS.init();
+  }, [])
   return (
     <div>
       <meta charSet="UTF-8" />
@@ -120,14 +125,14 @@ export default function IndoorHome() {
       />
       <title>plant</title>
       <Nav />
-      <div className="nav1">
-        <h1 style={{ textAlign: "center", color: "darkkhaki" }}>
+      <div className="nav1" >
+        <h1 style={{ textAlign: "center", color: "darkkhaki" }} data-aos="flip-left">
           <b className='indoor'>INDOOR PLANTS</b>
         </h1>
         <br />
-        <h3 style={{ textAlign: "center", color: "darkkhaki" }}>
+        <h3 style={{ textAlign: "center", color: "darkkhaki" }} data-aos="flip-left">
           <b>
-            <i>
+            <i className='indoor'>
               To Create An Ambiance &amp; Freshness <br /> In Your Home
             </i>
           </b>

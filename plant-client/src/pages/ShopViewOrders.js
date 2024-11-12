@@ -3,6 +3,7 @@ import './shopViewOrders.css'
 import NavBar from '../components/Nav'
 import axios from 'axios'
 import Footer from '../components/Footer'
+import AOS from 'aos'
 
 export default function ShopViewOrders() {
   const [order, setOrder] = useState([])
@@ -24,6 +25,9 @@ export default function ShopViewOrders() {
     console.log(error);
 
   }
+  useEffect(()=>{
+    AOS.init()
+  },[])
   return (
     <div>
       <meta charSet="UTF-8" />
@@ -42,7 +46,7 @@ export default function ShopViewOrders() {
 
       <div className="order-list">
         {order.map((value,index) => (
-          <div className="order-card" key={index} >
+          <div className="order-card" key={index}  data-aos="zoom-out-left">
             <div className="user-details">
               <h3>Customer Information</h3>
               <p><strong>Name:</strong> {value.Name}</p>
