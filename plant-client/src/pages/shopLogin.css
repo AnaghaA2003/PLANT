@@ -9,6 +9,7 @@
   border-radius: 20px;
   box-shadow: 1px 1px 20px  black;
   margin: auto;
+  background-attachment: fixed;
 }
 .hd{
   text-align: center;
