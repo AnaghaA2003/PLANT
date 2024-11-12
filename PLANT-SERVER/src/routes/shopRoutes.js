@@ -177,15 +177,15 @@ shopRoutes.get('/single-shopView/:id', async (req, res) => {
         })
     }
 })
-shopRoutes.get('/shopAdd-productView',checkauth, async (req, res) => {
+shopRoutes.get('/shopAdd-productView/:id', async (req, res) => {
     try {
 
        
         
-        const id =req.userData.loginId //checkauth kodutha id pass chya
+        const id =req.params.id//checkauth kodutha id pass chya
         console.log("id==>", id);
 
-        const viewData = await productSchema.find({ loginId: id })
+        const viewData = await productSchema.find({ shop_login_id: id })
 
         console.log("viewData=>", viewData);
 

@@ -4,10 +4,29 @@ import NavBar from '../components/Nav'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import Footer from '../components/Footer'
+import toast,{Toaster} from 'react-hot-toast'
 
 export default function ShopMore() {
   const [more, setMore] = useState([])
+
   const { id } = useParams()
+  const cartProduct = (id) => {
+    const data = {
+      user_login_id: JSON.parse(localStorage.getItem('loginId')),
+      product_Id: id
+    }
+    axios.post(`http://localhost:5000/api/cart/add_to_cart/`, data).then((res) => {
+      console.log(res.data.message);
+      toast.success(res.data.message)
+
+
+    }).catch((error) => {
+      console.log(error);
+      // toast.error()
+
+
+    })
+  }
   console.log("id==>", id);
   useEffect(() => {
     // const shop_login_id = JSON.parse(localStorage.getItem('loginId'));
@@ -42,11 +61,12 @@ export default function ShopMore() {
         crossOrigin="anonymous"
       />
       <NavBar /><br></br>
+      <Toaster/>
       {/* <img src='/img/shopMore2.jpg' height={"500px"} width={"1400px"}></img> */}
       
       <h1 style={{ textAlign: "center", fontFamily: "sans-serif", fontWeight: "bold" }}>OUR PRODUCTS</h1>
       <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
-        <div className='image-card' style={{display:"flex",justifyContent:"space-between",gap:"20px"}}>
+        <div className='image-card' style={{display:"flex",justifyContent:"space-between",gap:"20px",flexWrap:'wrap'}}>
           {more.map((value, index) => (
             <div className=" shop-card">
               <img src={value.product_img}></img>
@@ -57,6 +77,11 @@ export default function ShopMore() {
                 <p className="card__description">
                 {value.description}
                 </p><br></br>
+               
+                <i class="fa-solid fa-cart-shopping" onClick={() => {
+                        cartProduct(value._id)
+                      }}></i>
+              
 
 
                 <p style={{ color: "rgb(122, 35, 35)", textAlign: "center", display: "flex", justifyContent: "space-evenly" }}>
