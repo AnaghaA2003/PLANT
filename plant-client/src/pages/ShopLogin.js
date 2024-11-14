@@ -39,7 +39,7 @@ export default function ShopLogin() {
     data.append('Address', input.Address)
     data.append('Mobile', input.Mobile)
     data.append('shop_img', input.shop_img)
-    axios.post('http://localhost:5000/api/auth/shop-registration', data).then((res) => {
+    axios.post('https://plant-812n.onrender.com/api/auth/shop-registration', data).then((res) => {
       console.log(res.data.message);
       toast.success(res.data.message)
       setTimeout(() => {

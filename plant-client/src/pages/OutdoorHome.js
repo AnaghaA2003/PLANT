@@ -16,7 +16,7 @@ export default function OutdoorHome() {
 
   useEffect(() => {
     const loginId = JSON.parse(localStorage.getItem('loginId'))
-    axios.get(`http://localhost:5000/api/wishlist/view_wishlist/${loginId}`).then((res) => {
+    axios.get(`https://plant-812n.onrender.com/api/wishlist/view_wishlist/${loginId}`).then((res) => {
       console.log(res.data.data);
       setWishlist(res.data.data)
     })
@@ -26,7 +26,7 @@ export default function OutdoorHome() {
       user_login_id: JSON.parse(localStorage.getItem('loginId')),
       product_Id: id
     }
-    axios.post(`http://localhost:5000/api/cart/add_to_cart/`, data).then((res) => {
+    axios.post(`https://plant-812n.onrender.com/api/cart/add_to_cart/`, data).then((res) => {
       console.log(res.data.message);
       toast.success(res.data.message)
 
@@ -50,7 +50,7 @@ export default function OutdoorHome() {
   const [product, setProduct] = useState([])
   console.log(product);
   useEffect(() => {
-    axios.get("http://localhost:5000/api/product/product-view").then((res) => {
+    axios.get("https://plant-812n.onrender.com/api/product/product-view").then((res) => {
       console.log(res.data.data);
       const filterData = res.data.data.filter((value) => {
         return value.category === 'outdoor plants'
@@ -60,7 +60,7 @@ export default function OutdoorHome() {
     })
   }, [])
   const productDelete = (product_Id) => {
-    axios.post(`http://localhost:5000/api/product/product-delete/${product_Id}`, product)
+    axios.post(`https://plant-812n.onrender.com/api/product/product-delete/${product_Id}`, product)
       .then((res) => {
         console.log(res);
         toast.success(res.data.message)
@@ -73,7 +73,7 @@ export default function OutdoorHome() {
       })
   }
   const productEdit = (product_Id) => {
-    // axios.post(`http://localhost:5000/api/product/product-edit/${product_Id}`,product).then((res)=>{
+    // axios.post(`https://plant-812n.onrender.com/api/product/product-edit/${product_Id}`,product).then((res)=>{
     //   console.log(res);
 
     // })
@@ -83,7 +83,7 @@ export default function OutdoorHome() {
   // const value = setInput([...input])
   // console.log(value);
   const productApprove = (product_Id) => {
-    axios.post(`http://localhost:5000/api/admin/product-approve/${product_Id}`, product).then((res) => {
+    axios.post(`https://plant-812n.onrender.com/api/admin/product-approve/${product_Id}`, product).then((res) => {
       console.log(res);
       toast.success(res.data.message)
 
@@ -99,7 +99,7 @@ export default function OutdoorHome() {
       user_loginId: JSON.parse(localStorage.getItem('loginId')),
       product_Id: id
     }
-    axios.post(`http://localhost:5000/api/wishlist/add_to_wishlist/`, wishlistData).then((res) => {
+    axios.post(`https://plant-812n.onrender.com/api/wishlist/add_to_wishlist/`, wishlistData).then((res) => {
       console.log(res.data.message);
       setCheckWishlist(!checkwishlist)
       toast.success(res.data.message)

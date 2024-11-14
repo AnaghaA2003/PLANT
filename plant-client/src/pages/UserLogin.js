@@ -43,7 +43,7 @@ export default function UserLogin() {
         data.append('Mobile', input.Mobile)
         data.append('Address', input.Address)
         data.append('user_img', input.user_img)
-        axios.post('http://localhost:5000/api/auth/user-registration', data).then((res) => {
+        axios.post('https://plant-812n.onrender.com/api/auth/user-registration', data).then((res) => {
             console.log(res.data.message);
             toast.success(res.data.message)
             

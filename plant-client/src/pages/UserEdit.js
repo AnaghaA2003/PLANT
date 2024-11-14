@@ -22,7 +22,7 @@ const navigate=useNavigate()
     const [error, setError] = useState({})
     useEffect(()=>{
         const token=localStorage.getItem('token')
-        axios.get(`http://localhost:5000/api/user/profile-view/`,{
+        axios.get(`https://plant-812n.onrender.com/api/user/profile-view/`,{
             headers:{
                 Authorization:`Bearer ${token}`
             }
@@ -59,7 +59,7 @@ const navigate=useNavigate()
         data.append('Address', input.Address)
         data.append('user_img', input.user_img)
 
-        axios.post(`http://localhost:5000/api/user/profile-edit/${id}`, data).then((res) => {
+        axios.post(`https://plant-812n.onrender.com/api/user/profile-edit/${id}`, data).then((res) => {
             console.log(res.data.message);
             toast.success(res.data.message)
             setTimeout(() => {

@@ -35,7 +35,7 @@ export default function Login() {
             return;
 
         }
-        axios.post('http://localhost:5000/api/auth/login-check', input).then((res) => {
+        axios.post('https://plant-812n.onrender.com/api/auth/login-check', input).then((res) => {
             console.log(res.data);
             toast.success(res.data.message)
             localStorage.setItem('loginId', JSON.stringify(res.data.data._id))

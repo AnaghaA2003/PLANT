@@ -15,7 +15,7 @@ export default function ShopOwnProfileView() {
         const id = JSON.parse(localStorage.getItem('loginId'));
         console.log("log==>", id);
 
-        axios.get(`http://localhost:5000/api/shop/single-shopView/${id}`).then((res) => {
+        axios.get(`https://plant-812n.onrender.com/api/shop/single-shopView/${id}`).then((res) => {
             console.log("res==>", res.data.data);
             setshopProfile(res.data.data)
 

@@ -22,7 +22,7 @@ export default function EditIndoorProduct() {
     const navigate=useNavigate()
     
     useEffect(()=>{
-        axios.get(`http://localhost:5000/api/product/single-productView/${id}`).then((res)=>{
+        axios.get(`https://plant-812n.onrender.com/api/product/single-productView/${id}`).then((res)=>{
             console.log(res);
             setInput(res.data.data)
             
@@ -55,7 +55,7 @@ export default function EditIndoorProduct() {
         data.append('quantity', input.quantity)
         data.append('product_img', input.product_img)
         data.append('category', input.category)
-        axios.post(`http://localhost:5000/api/product/product-edit/${id}`, data).then((res) => {
+        axios.post(`https://plant-812n.onrender.com/api/product/product-edit/${id}`, data).then((res) => {
             console.log(res.data.message);
             toast(res.data.message)
             // navigate('/outdoor')

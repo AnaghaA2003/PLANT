@@ -27,7 +27,7 @@ export default function UpiPayment() {
 
     }
     // const _id=JSON.parse(localStorage.getItem('loginId'))
-    // axios.post(`http://localhost:5000/api/cart/status-update/${_id}`,ViewCart).then((res)=>{
+    // axios.post(`https://plant-812n.onrender.com/api/cart/status-update/${_id}`,ViewCart).then((res)=>{
     //   console.log(res.data.message);
     //   const dataFilter=ViewCart.filter((value)=>{
     //     return value.user_loginId!=_id
@@ -37,7 +37,7 @@ export default function UpiPayment() {
 
     // })
     const _id = JSON.parse(localStorage.getItem('loginId'))
-    axios.get(`http://localhost:5000/api/order/cart-addproduct-order/${_id}`).then((res)=>{
+    axios.get(`https://plant-812n.onrender.com/api/order/cart-addproduct-order/${_id}`).then((res)=>{
       console.log(res.data.message);
       toast.success(res.data.message)
       setTimeout(() => {

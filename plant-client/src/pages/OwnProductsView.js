@@ -23,7 +23,7 @@ export default function OwnProductsView() {
     
     console.log("id==>",shop_login_id);
     
-    axios.get(`http://localhost:5000/api/shop/shopAdd-productView/`,{
+    axios.get(`https://plant-812n.onrender.com/api/shop/shopAdd-productView/`,{
       headers:{
         Authorization: `Bearer ${token}`
       }
@@ -45,7 +45,7 @@ export default function OwnProductsView() {
 
   }
   const productDelete = (product_Id) => {
-    axios.post(`http://localhost:5000/api/product/product-delete/${product_Id}`, view)
+    axios.post(`https://plant-812n.onrender.com/api/product/product-delete/${product_Id}`, view)
       .then((res) => {
         console.log(res);
         toast.success(res.data.message)
@@ -58,7 +58,7 @@ export default function OwnProductsView() {
       })
   }
   const productEdit = (product_Id) => {
-    // axios.post(`http://localhost:5000/api/product/product-edit/${product_Id}`,product).then((res)=>{
+    // axios.post(`https://plant-812n.onrender.com/api/product/product-edit/${product_Id}`,product).then((res)=>{
     //   console.log(res);
 
     // })

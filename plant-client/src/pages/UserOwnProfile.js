@@ -14,7 +14,7 @@ export default function UserOwnProfile() {
 
     console.log("id==>", id);
 
-    axios.get(`http://localhost:5000/api/user/profile-view/`, {
+    axios.get(`https://plant-812n.onrender.com/api/user/profile-view/`, {
       headers: {
         Authorization: `Bearer ${token}`
       }

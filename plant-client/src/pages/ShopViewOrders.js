@@ -12,7 +12,7 @@ export default function ShopViewOrders() {
   try {
     useEffect(() => {
       const shopId = JSON.parse(localStorage.getItem("loginId"))
-      axios.get(`http://localhost:5000/api/shop/shopView-productOrder/${shopId}`).then((res) => {
+      axios.get(`https://plant-812n.onrender.com/api/shop/shopView-productOrder/${shopId}`).then((res) => {
         console.log(res.data.data);
         setOrder(res.data.data)
 

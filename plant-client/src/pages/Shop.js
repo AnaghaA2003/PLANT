@@ -25,14 +25,14 @@ export default function Shop() {
     console.log("shop=>", shop);
 
     useEffect(() => {
-        axios.get("http://localhost:5000/api/admin/adminShop-view").then((res) => {
+        axios.get("https://plant-812n.onrender.com/api/admin/adminShop-view").then((res) => {
             console.log(res.data.data);
             setShop(res.data.data);
         });
     }, []);
 
     const shopDelete = (shop_Id) => {
-        axios.post(`http://localhost:5000/api/shop/profile-delete/${shop_Id}`, shop)
+        axios.post(`https://plant-812n.onrender.com/api/shop/profile-delete/${shop_Id}`, shop)
             .then((res) => {
                 console.log(res);
                 toast.success(res.data.message);
@@ -60,7 +60,7 @@ export default function Shop() {
     const shopApprove = (loginId) => {
         console.log("id==>", loginId);
 
-        axios.post(`http://localhost:5000/api/admin/approve-shop/${loginId._id}`, shop).then((res) => {
+        axios.post(`https://plant-812n.onrender.com/api/admin/approve-shop/${loginId._id}`, shop).then((res) => {
             console.log(res);
             toast.success(res.data.message)
 

@@ -12,7 +12,7 @@ export default function WishList() {
           user_login_id: JSON.parse(localStorage.getItem('loginId')),
           product_Id: id
         }
-        axios.post(`http://localhost:5000/api/cart/add_to_cart/`, data).then((res) => {
+        axios.post(`https://plant-812n.onrender.com/api/cart/add_to_cart/`, data).then((res) => {
           console.log(res.data.message);
           toast.success(res.data.message)
     
@@ -27,14 +27,14 @@ export default function WishList() {
     const [wishlist, setWishlist] = useState([])
     useEffect(() => {
         const loginId = JSON.parse(localStorage.getItem('loginId'))
-        axios.get(`http://localhost:5000/api/wishlist/view_wishlist/${loginId}`).then((res) => {
+        axios.get(`https://plant-812n.onrender.com/api/wishlist/view_wishlist/${loginId}`).then((res) => {
             console.log(res.data.data);
             setWishlist(res.data.data)
 
         })
     },[])
     const removeWishlist=(_id)=>{
-        axios.post(`http://localhost:5000/api/wishlist/remove_wishlist/${_id}`).then((res)=>{
+        axios.post(`https://plant-812n.onrender.com/api/wishlist/remove_wishlist/${_id}`).then((res)=>{
             console.log(res.data.message);
             toast.success(res.data.message)
 

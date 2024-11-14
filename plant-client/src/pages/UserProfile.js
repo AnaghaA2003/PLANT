@@ -11,7 +11,7 @@ export default function UserProfile() {
   console.log(user);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/admin/adminUser-view").then((res) => {
+    axios.get("https://plant-812n.onrender.com/api/admin/adminUser-view").then((res) => {
       console.log(res.data.data);
       setUser(res.data.data);
     
@@ -23,7 +23,7 @@ export default function UserProfile() {
 
   console.log("user=>", user);
   const approve = (loginId) => {
-    axios.post(`http://localhost:5000/api/admin/approve-user/${loginId}`, user).then((res) => {
+    axios.post(`https://plant-812n.onrender.com/api/admin/approve-user/${loginId}`, user).then((res) => {
       console.log(res);
       toast.success(res.data.message)
 
@@ -35,7 +35,7 @@ export default function UserProfile() {
     })
   }
   const reject = (loginId) => {
-    axios.post(`http://localhost:5000/api/admin/adminUser-delete/${loginId}`, user).then((res) => {
+    axios.post(`https://plant-812n.onrender.com/api/admin/adminUser-delete/${loginId}`, user).then((res) => {
       console.log(res);
       toast.success(res.data.message)
       const dataFilter = user.filter((value) => {

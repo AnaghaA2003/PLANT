@@ -36,5 +36,5 @@ app.get('/',(req,res)=>{
 })
 
 app.listen(process.env.PORT,()=>{
-    console.log("server is running on http://localhost:5000");
+    console.log("server is running on https://plant-812n.onrender.com");
 })

@@ -13,7 +13,7 @@ export default function MyOrderProducts() {
   
   useEffect(()=>{
     const logid=JSON.parse(localStorage.getItem('loginId'))
-    axios.get(`http://localhost:5000/api/order/myorder/${logid}`).then((res)=>{
+    axios.get(`https://plant-812n.onrender.com/api/order/myorder/${logid}`).then((res)=>{
 
       console.log(res);
       setMyOrder(res.data.data);

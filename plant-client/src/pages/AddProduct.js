@@ -39,7 +39,7 @@ export default function AddProduct() {
         data.append('category', input.category);
         data.append('shop_login_id', JSON.parse(localStorage.getItem('loginId')));
 
-        axios.post("http://localhost:5000/api/product/product-add", data)
+        axios.post("https://plant-812n.onrender.com/api/product/product-add", data)
             .then((res) => {
                 toast.success(res.data.message);
             })

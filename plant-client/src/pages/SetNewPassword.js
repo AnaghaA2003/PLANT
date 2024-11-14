@@ -59,7 +59,7 @@ const validationError = () => {
     }
     console.log("data==>",data);
     
-    axios.post(`http://localhost:5000/api/auth/password-update/`,data).then((res)=>{
+    axios.post(`https://plant-812n.onrender.com/api/auth/password-update/`,data).then((res)=>{
       console.log(res.data.message);
       toast.success(res.data.message)
       localStorage.removeItem('email')

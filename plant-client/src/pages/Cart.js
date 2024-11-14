@@ -20,7 +20,7 @@ export default function Cart() {
     const logid=JSON.parse(localStorage.getItem('loginId'))
  
     
-    axios.get(`http://localhost:5000/api/cart/view_cart/${logid}`).then((res) => {
+    axios.get(`https://plant-812n.onrender.com/api/cart/view_cart/${logid}`).then((res) => {
       console.log(res.data.data);
       setViewCart(res.data.data)
 
@@ -39,7 +39,7 @@ export default function Cart() {
     localStorage.setItem('totalCart',cartTotal)
   }, [ViewCart]);
   const decrement = (_id) => {
-    axios.post(`http://localhost:5000/api/cart/quantity-decrement/${_id}`, ViewCart).then((res) => {
+    axios.post(`https://plant-812n.onrender.com/api/cart/quantity-decrement/${_id}`, ViewCart).then((res) => {
       console.log(res.data.message);
       const decrementFilter = ViewCart.filter((value) => {
         if (value._id == _id) {
@@ -52,7 +52,7 @@ export default function Cart() {
     })
   }
   const increment = (_id) => {
-    axios.post(`http://localhost:5000/api/cart/quantity-increment/${_id}`, ViewCart).then((res) => {
+    axios.post(`https://plant-812n.onrender.com/api/cart/quantity-increment/${_id}`, ViewCart).then((res) => {
       console.log(res.data.message);
       const dataFilter = ViewCart.filter((value) => {
         if (value._id == _id) {
@@ -64,7 +64,7 @@ export default function Cart() {
     })
   }
   const cartDelete = (_id) => {
-    axios.post(`http://localhost:5000/api/cart/delete-cart/${_id}`, ViewCart).then((res) => {
+    axios.post(`https://plant-812n.onrender.com/api/cart/delete-cart/${_id}`, ViewCart).then((res) => {
       console.log(res.data.message);
       toast.success(res.data.message)
       const deleteCart = ViewCart.filter((value) => {
@@ -78,7 +78,7 @@ export default function Cart() {
   }
   const checkOut=()=>{
     // const _id=JSON.parse(localStorage.getItem('loginId'))
-    // axios.post(`http://localhost:5000/api/cart/status-update/${_id}`,ViewCart).then((res)=>{
+    // axios.post(`https://plant-812n.onrender.com/api/cart/status-update/${_id}`,ViewCart).then((res)=>{
     //   console.log(res.data.message);
     //   const dataFilter=ViewCart.filter((value)=>{
     //     return value.user_loginId!=_id

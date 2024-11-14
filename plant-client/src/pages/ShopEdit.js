@@ -18,7 +18,7 @@ export default function ShopEdit() {
   const [error, setError] = useState({});
   
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/shop/single-shopView/${id}`)
+    axios.get(`https://plant-812n.onrender.com/api/shop/single-shopView/${id}`)
       .then((res) => {
         setInput(res.data.data);
       })
@@ -52,7 +52,7 @@ export default function ShopEdit() {
     data.append('Mobile', input.Mobile);
     data.append('shop_img', input.shop_img);
 
-    axios.post(`http://localhost:5000/api/shop/profile-edit/${id}`, data)
+    axios.post(`https://plant-812n.onrender.com/api/shop/profile-edit/${id}`, data)
       .then((res) => {
         toast.success(res.data.message);
         setTimeout(() => {

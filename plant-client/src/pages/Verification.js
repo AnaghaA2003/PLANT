@@ -47,7 +47,7 @@ export default function Verification() {
     const data ={
       email:localStorage.getItem('email')
     }
-    axios.post(`http://localhost:5000/api/auth/email-verification`, data).then((res) => {
+    axios.post(`https://plant-812n.onrender.com/api/auth/email-verification`, data).then((res) => {
       console.log(res.data.message);
       toast.success(res.data.message)
       console.log("res.data.email==>", res);

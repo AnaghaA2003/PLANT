@@ -15,7 +15,7 @@ export default function ShopMore() {
       user_login_id: JSON.parse(localStorage.getItem('loginId')),
       product_Id: id
     }
-    axios.post(`http://localhost:5000/api/cart/add_to_cart/`, data).then((res) => {
+    axios.post(`https://plant-812n.onrender.com/api/cart/add_to_cart/`, data).then((res) => {
       console.log(res.data.message);
       toast.success(res.data.message)
 
@@ -32,7 +32,7 @@ export default function ShopMore() {
     // const shop_login_id = JSON.parse(localStorage.getItem('loginId'));
     const token=localStorage.getItem('token');
     try {
-      axios.get(`http://localhost:5000/api/shop/shopAdd-productView/${id}`).then((res) => {
+      axios.get(`https://plant-812n.onrender.com/api/shop/shopAdd-productView/${id}`).then((res) => {
         console.log("res==>", res.data.data);
         setMore(res.data.data)
 

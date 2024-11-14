@@ -28,7 +28,7 @@ const inputChange = (event) => {
         return;
 
     }
-    axios.post(`http://localhost:5000/api/auth/email-verification`,input).then((res)=>{
+    axios.post(`https://plant-812n.onrender.com/api/auth/email-verification`,input).then((res)=>{
       console.log(res.data.message);
       toast.success(res.data.message)
       console.log("res.data.email==>",res);
