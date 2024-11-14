@@ -209,22 +209,33 @@
 
 
 
- @media screen and (max-width:376px) {
+ @media screen and (max-width:365px) {
   .Head{
     text-align: center;
-     color: rgb(175, 120, 81);
+     color: #0fd850;
      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
      font-weight: bolder;
      font-size: 20px;
      padding-top: 54px;
      opacity: 3px 3px 50px white;
-     font-size: 68px;
+     font-size: 48px;
     /* background: url(./img/textBg.webp); */
-    background-image: url('/public/img/textBg.webp');
-    background-size: cover;
+    /* background-image: url('/public/img/textBg.webp'); */
+    /* background-size: cover;
     background-clip: text;
     -webkit-background-clip: text;
-    color: transparent;
+    color: transparent; */
+   
     
 }
+.paragraph{
+  text-align: center;
+  color: wheat;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  /* font-weight: bolder; */
+  font-size: 40px;
+ /* box-shadow: 1px 1px 50px black; */
+}
+
+
  }

@@ -80,9 +80,9 @@ export default function AddProduct() {
             </div><br />
             <div className='addProduct'>
                 <Toaster />
-                <form className='form-product'>
+                <form className='form-product' style={{paddingTop:'18px'}}>
                     {/* <div className='span'><span>{error.category}</span></div> */}
-                    <span className='span'>{error.category}</span>
+                    <span className='span' style={{height:'40px' }}>{error.category}</span>
                     <select
                         className="form-select form-select-sm category"
                         name='category'
@@ -113,7 +113,7 @@ export default function AddProduct() {
                         placeholder='Product name'
                         name="productName"
                         onChange={inputChange}
-                        style={{ width: "99%", borderRadius: "10px" }}
+                        style={{ width: "99%", borderRadius: "10px",height:'40px' }}
                     /><br /><br />
                     {/* <div className='span'><span>{error.description}</span></div> */}
                     <span className='span'>{error.description}</span>
@@ -123,7 +123,7 @@ export default function AddProduct() {
                         placeholder='Description'
                         name="description"
                         onChange={inputChange}
-                        style={{ width: "99%", borderRadius: "10px" }}
+                        style={{ width: "99%", borderRadius: "10px",height:'40px'  }}
                     /><br /><br />
                     {/* <div className='span'><span>{error.price}</span></div> */}
                     <span className='span'>{error.price}</span>
@@ -133,7 +133,7 @@ export default function AddProduct() {
                         placeholder='Price'
                         name="price"
                         onChange={inputChange}
-                        style={{ width: "99%", borderRadius: "10px" }}
+                        style={{ width: "99%", borderRadius: "10px",height:'40px'  }}
                     /><br /><br />
                     {/* <div className='span'><span>{error.quantity}</span></div> */}
                     <span className='span'>{error.quantity}</span>
@@ -143,7 +143,7 @@ export default function AddProduct() {
                         placeholder='Quantity'
                         name="quantity"
                         onChange={inputChange}
-                        style={{ width: "99%", borderRadius: "10px" }}
+                        style={{ width: "99%", borderRadius: "10px",height:'40px'  }}
                     /><br /><br />
                     <button className='button-btn' onClick={click}>
                         <span className="circle1"></span>

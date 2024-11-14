@@ -1,6 +1,6 @@
 /* From Uiverse.io by Smit-Prajapati */ 
 .userCard {
-    width: 511px;
+    width: 311px;
     height: 375px;
     background: white;
     border-radius: 32px;
@@ -9,6 +9,21 @@
     box-shadow: #604b4a30 0px 70px 30px -50px;
     transition: all 0.5s ease-in-out;
   margin: auto;
+  }
+
+  @media screen and(max-width:'365px') {
+    .userCard {
+      width: 511px;
+      height: 375px;
+      background: white;
+      border-radius: 32px;
+      padding: 3px;
+      position: relative;
+      box-shadow: #604b4a30 0px 70px 30px -50px;
+      transition: all 0.5s ease-in-out;
+    margin: auto;
+    }
+    
   }
   
   .userCard .mail {

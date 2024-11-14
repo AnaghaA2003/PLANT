@@ -23,11 +23,9 @@ export default function OwnProductsView() {
     
     console.log("id==>",shop_login_id);
     
-    axios.get(`https://plant-812n.onrender.com/api/shop/shopAdd-productView/`,{
-      headers:{
-        Authorization: `Bearer ${token}`
-      }
-    }).then((res)=>{
+    axios.get(`https://plant-812n.onrender.com/api/shop/shopAdd-productView/${shop_login_id}`
+      
+    ).then((res)=>{
       console.log("data==>",res);
       setView(res.data.data)
     }) .catch((error) => {
